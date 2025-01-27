@@ -1,0 +1,89 @@
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chiwas Town News - Noticias de Chihuahua</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script type="module" src="js/app.js"></script>
+</head>
+<body>
+  <header>
+    <nav class="main-nav">
+      <div class="nav-wrapper">
+        <button class="menu-button">
+          <svg width="24" height="24" viewBox="0 0 24 24">
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+          </svg>
+        </button>
+        <div class="nav-sections">
+          <a href="https://chiwastown.news/politica">Política</a>
+          <a href="https://chiwastown.news/ciudad">Ciudad</a>
+          <a href="https://chiwastown.news/economia">Economía</a>
+          <a href="https://chiwastown.news/deportes">Deportes</a>
+          <a href="https://chiwastown.news/cultura">Cultura</a>
+        </div>
+        <div class="nav-actions">
+          <button class="search-button">
+            <svg width="24" height="24" viewBox="0 0 24 24">
+              <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </nav>
+    <div class="brand">
+      <h1>Chiwas Town News</h1>
+      <p class="brand-subtitle">La verdad de Chihuahua</p>
+    </div>
+  </header>
+
+  <main>
+    <div class="news-container">
+      <section class="top-news">
+        <article class="main-story">
+          <div id="featured-news"></div>
+        </article>
+      </section>
+
+      <section class="news-grid">
+        <div id="latest-news"></div>
+      </section>
+    </div>
+
+    <aside class="sidebar">
+      <section class="most-popular">
+        <h2>Lo más leído</h2>
+        <div id="popular-news"></div>
+      </section>
+    </aside>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Chiwas Town News</h3>
+        <p>Tu fuente confiable de noticias en Chihuahua</p>
+        <div class="mission-statement">
+          <p>Esta página ha sido creada con el propósito de informar de manera veraz, objetiva y oportuna a la comunidad, fungiendo como un canal independiente que destapa actos de corrupción, irregularidades y abuso de poder. Nuestro compromiso es ser un contrapeso para las autoridades y los sectores de poder, siempre defendiendo los intereses del pueblo. No tenemos fines lucrativos; nuestra misión es meramente servir como una herramienta para empoderar a la ciudadanía y promover la justicia, la transparencia y el bienestar colectivo.</p>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h3>Secciones</h3>
+        <ul>
+          <li><a href="https://chiwastown.news/politica">Política</a></li>
+          <li><a href="https://chiwastown.news/ciudad">Ciudad</a></li>
+          <li><a href="https://chiwastown.news/economia">Economía</a></li>
+          <li><a href="https://chiwastown.news/deportes">Deportes</a></li>
+          <li><a href="https://chiwastown.news/cultura">Cultura</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Información</h3>
+        <p class="creator-info">Creado por: Ing. David Alonso Torres Mendoza</p>
+        <p class="creation-date">Fecha de creación: 27/01/2025</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
