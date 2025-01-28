@@ -11,8 +11,9 @@ export class NewsAPI {
         url: 'https://heraldodechihuahua.com.mx',
         selector: '.news-item'
       }
-      // Agregar más fuentes según sea necesario
     ];
+
+    this.proxyUrl = 'https://corsproxy.io/?'; // Nuevo proxy confiable
   }
 
   async fetchNews() {
@@ -23,34 +24,38 @@ export class NewsAPI {
       
       return allNews.flat();
     } catch (error) {
-      console.error('Error fetching news:', error);
+      console.error('❌ Error fetching news:', error);
       return [];
     }
   }
 
   async fetchFromSource(source) {
     try {
-      const response = await axios.get(`/api/fetch?url=${source.url}`);
-      return this.parseNews(response.data, source);
+      console.log(`📡 Fetching news from: ${source.name}`);
+
+      const response = await fetch(`${this.proxyUrl}${encodeURIComponent(source.url)}`);
+      
+      if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+
+      const data = await response.text(); // Obtiene HTML como texto
+      return this.parseNews(data, source);
     } catch (error) {
-      console.error(`Error fetching from ${source.name}:`, error);
+      console.error(`❌ Error fetching from ${source.name}:`, error);
       return [];
     }
   }
 
   parseNews(html, source) {
-    // Implementar parser específico para cada fuente
-    // Este es un ejemplo simplificado
     const parser = new DOMParser();
     const doc = parser.parseFromString(html, 'text/html');
     const articles = doc.querySelectorAll(source.selector);
-    
+
     return Array.from(articles).map(article => ({
-      title: article.querySelector('h2')?.textContent,
-      content: article.querySelector('p')?.textContent,
-      url: article.querySelector('a')?.href,
+      title: article.querySelector('h2')?.textContent || 'Sin título',
+      content: article.querySelector('p')?.textContent || 'Sin contenido',
+      url: article.querySelector('a')?.href || source.url,
       source: source.name,
-      date: new Date(),
+      date: new Date().toLocaleString(),
     }));
   }
 }
