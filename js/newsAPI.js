@@ -4,16 +4,16 @@ export class NewsAPI {
       {
         name: 'Zona Free',
         url: 'https://zonafree.mx/',
-        selector: '.post-title a', // Selector para Zona Free
+        selector: '.post-title a',
       },
       {
         name: 'La Parada Digital',
         url: 'https://laparadadigital.com/',
-        selector: '.post-title a', // Selector para La Parada Digital
+        selector: '.post-title a',
       },
     ];
 
-    this.proxyUrl = 'https://thingproxy.freeboard.io/fetch/';
+    this.proxyUrl = 'https://cors-anywhere.herokuapp.com/'; // Proxy recomendado
   }
 
   async fetchNews() {
@@ -33,10 +33,10 @@ export class NewsAPI {
     try {
       console.log(`📡 Fetching news from: ${source.name}`);
 
-      const response = await fetch(`${this.proxyUrl}${encodeURIComponent(source.url)}`);
+      const response = await fetch(`${this.proxyUrl}${source.url}`);
       if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
 
-      const html = await response.text(); // Obtén el HTML directamente
+      const html = await response.text(); // Obtiene el HTML como texto
       return this.parseNews(html, source);
     } catch (error) {
       console.error(`❌ Error fetching from ${source.name}:`, error);
@@ -50,9 +50,9 @@ export class NewsAPI {
     const articles = doc.querySelectorAll(source.selector);
 
     return Array.from(articles).map(article => ({
-      title: article.textContent.trim() || 'Sin título', // Obtén el título del artículo
-      content: article.closest('p')?.textContent.trim() || 'Sin contenido', // Busca contenido cercano
-      url: article.href || source.url, // URL del artículo
+      title: article.textContent.trim() || 'Sin título',
+      content: article.closest('p')?.textContent.trim() || 'Sin contenido',
+      url: article.href || source.url,
       source: source.name,
       date: new Date().toLocaleString(),
     }));
