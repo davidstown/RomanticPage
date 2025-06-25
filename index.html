@@ -110,6 +110,13 @@
       text-decoration: none;
       border-radius: 8px;
     }
+    iframe {
+      border: none;
+      width: 100%;
+      height: 166px;
+      border-radius: 10px;
+      margin-top: 10px;
+    }
   </style>
 </head>
 <body>
@@ -117,7 +124,28 @@
     <h1>✨ Porque el amor... merece su propio lugar en Internet ✨</h1>
   </header>
   <div class="container">
-    <!-- El contenido de las secciones continúa sin cambio estructural -->
+    <section class="galeria">
+      <h2>Galería romántica</h2>
+      <img src="https://www.kukyflor.com/blog/wp-content/uploads/2015/06/7_COLECC_800x600_AMOR.jpg">
+      <img src="https://www.mundopsicologos.com/site/article/68030/56732/romantico-relacion_ai1.jpg">
+      <img src="https://cdn.businessinsider.es/sites/navi.axelspringer.es/public/media/image/2024/10/destino-paisaje-pareja-romantica-4252789.jpg?tf=3840x">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMNkPpZTk5wsMNZhssUmZ2XZq7nDV6DBfxpQ&s">
+      <img src="https://www.eluniversal.com.mx/resizer/v2/S5NMZV46YZF3HGG3774FD2XN6E.jpg?auth=39ba5f0143901cfcb01890da9a10f080b1243abd992d04b92de0efc19f4db989&smart=true&width=1100&height=666">
+      <img src="https://offloadmedia.feverup.com/monterreysecreto.com/wp-content/uploads/2022/02/18003031/Lugares-romanticos-cerca-de-Monterrey-1-1024x683.jpg">
+    </section>
+    <section class="playlist">
+      <h2>Nuestra música</h2>
+      <iframe src="https://www.youtube.com/embed/KNZH-emehxA?autoplay=1&loop=1&playlist=KNZH-emehxA"></iframe>
+    </section>
+    <section class="abrelo">
+      <h2>Ábrelo cuando...</h2>
+      <button onclick="mostrarNota('enojo')">Estés enojada</button>
+      <button onclick="mostrarNota('extrañar')">Me extrañes</button>
+      <button onclick="mostrarNota('dudes')">Dudes de mi amor</button>
+      <div id="nota-enojo" class="nota-emocional">Sé que puedes estar molesta, pero recuerda que mi amor sigue intacto. Estoy aquí para escucharte y mejorar.</div>
+      <div id="nota-extrañar" class="nota-emocional">Cada segundo sin ti me recuerda lo afortunado que soy de tenerte. Te extraño más de lo que las palabras pueden decir.</div>
+      <div id="nota-dudes" class="nota-emocional">Si alguna vez dudas de lo que siento por ti, recuerda todos nuestros momentos. No hay un solo día en que no piense en ti con amor.</div>
+    </section>
   </div>
   <script>
     function mostrarNota(id) {
