@@ -3,24 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Inspiración Digital</title>
+  <title>Tu historia en una página</title>
   <style>
     body {
       margin: 0;
-      font-family: 'Trebuchet MS', sans-serif;
-      background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=3000&q=80') no-repeat center center fixed;
+      font-family: 'Georgia', serif;
+      background: url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=3000&q=80') no-repeat center center fixed;
       background-size: cover;
-      color: #2d3e50;
+      color: #5a2d38;
     }
     .container {
-      max-width: 1200px;
+      max-width: 1100px;
       margin: auto;
       padding: 20px;
-      background-color: rgba(255, 255, 255, 0.92);
-      border-radius: 15px;
+      background-color: rgba(255, 250, 250, 0.95);
+      border-radius: 20px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
     }
     header {
-      background-image: url('https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=3000&q=80');
+      background-image: url('https://images.unsplash.com/photo-1520975916090-3105956dac38?auto=format&fit=crop&w=3000&q=80');
       background-size: cover;
       background-position: center;
       height: 90vh;
@@ -31,96 +32,183 @@
       color: white;
     }
     header h1 {
-      background-color: rgba(0, 0, 0, 0.4);
+      background-color: rgba(0, 0, 0, 0.5);
       padding: 30px;
-      border-radius: 12px;
+      border-radius: 15px;
       font-size: 2.5em;
     }
     section h2 {
-      color: #4a0072;
+      color: #b30059;
+      font-size: 1.8em;
+      margin-bottom: 10px;
     }
-    .mensaje {
-      background-color: #f5f0ff;
-      padding: 20px;
-      border-left: 5px solid #7c4dff;
+    .mensaje, .frases, .galeria, .carta, .musica, .abrelo, .formulario, .final {
       margin-top: 40px;
-      border-radius: 10px;
+      padding: 25px;
+      background-color: #fff0f6;
+      border-radius: 15px;
     }
     .galeria {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 15px;
-      margin: 40px 0;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
     }
-    .foto img {
+    .galeria img {
       width: 100%;
       border-radius: 10px;
     }
-    .foto p {
-      text-align: center;
-      font-size: 0.9em;
-      color: #6a1b9a;
+    .frases ul {
+      list-style: none;
+      padding-left: 0;
     }
-    .servicios {
-      background-color: #ede7f6;
-      padding: 20px;
+    .frases ul li::before {
+      content: "💖 ";
+    }
+    .carta p {
+      font-style: italic;
+      font-size: 1.1em;
+    }
+    .musica iframe {
       border-radius: 10px;
     }
-    .servicios ul {
-      list-style-type: none;
-      padding-left: 20px;
+    .abrelo h3 {
+      margin-top: 15px;
+      color: #cc0066;
     }
-    .servicios ul li::before {
-      content: "✨ ";
+    .abrelo p {
+      font-style: italic;
+      background-color: #ffe6f0;
+      padding: 15px;
+      border-left: 4px solid #cc6699;
+      border-radius: 8px;
+    }
+    .formulario label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    .formulario input, .formulario textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    .formulario button {
+      margin-top: 15px;
+      background-color: #cc0066;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .final {
+      background-color: #ffe0eb;
+      text-align: center;
+      font-size: 1.2em;
+      font-weight: bold;
     }
     footer {
-      margin-top: 50px;
       text-align: center;
+      margin-top: 50px;
+      background-color: #b30059;
       color: white;
-      background-color: #7c4dff;
       padding: 20px;
       border-radius: 0 0 15px 15px;
+    }
+    .boton-contacto {
+      margin-top: 20px;
+      display: inline-block;
+      padding: 12px 20px;
+      background-color: #b30059;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Creamos sitios con alma<br>para marcas que quieren brillar</h1>
+    <h1>✨ Porque el amor... merece su propio lugar en Internet ✨</h1>
   </header>
 
   <div class="container">
     <section class="mensaje">
-      <p>Bienvenido a tu futuro negocio digital. Este es un ejemplo de lo que puedes ofrecer: páginas visuales, con alma y propósito, adaptadas a cualquier historia o emprendimiento. Inspira, conecta, transforma.</p>
+      <h2>¿Y si tu historia pudiera vivir en una página?</h2>
+      <p>A veces, una carta no basta. A veces, el amor merece un espacio único, eterno y especial. Este es un rincón hecho para ti, para ella, para eso que aún late. 💌</p>
     </section>
 
     <section class="galeria">
-      <div class="foto">
-        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80" alt="Inspiración 1">
-        <p>Inspiración en cada línea</p>
-      </div>
-      <div class="foto">
-        <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=800&q=80" alt="Diseño moderno">
-        <p>Diseños que conectan</p>
-      </div>
-      <div class="foto">
-        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=800&q=80" alt="Creatividad">
-        <p>Creatividad en acción</p>
-      </div>
+      <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=800&q=80" alt="Pareja feliz">
+      <img src="https://images.unsplash.com/photo-1495562569060-2eec283d3391?auto=format&fit=crop&w=800&q=80" alt="Recuerdo">
+      <img src="https://images.unsplash.com/photo-1530023367847-a683933f417d?auto=format&fit=crop&w=800&q=80" alt="Flor y amor">
     </section>
 
-    <section class="servicios">
-      <h2>Servicios que puedes ofrecer</h2>
+    <section class="frases">
+      <h2>Frases para ti</h2>
       <ul>
-        <li>Diseño de páginas web personalizadas</li>
-        <li>Cartas interactivas y emocionales</li>
-        <li>Portafolios personales o de marca</li>
-        <li>Páginas para hoteles, restaurantes, negocios</li>
-        <li>Optimización para móviles y SEO básico</li>
+        <li>Eres la poesía que no sabía que sabía escribir.</li>
+        <li>Desde que llegaste, todo lo simple se volvió mágico.</li>
+        <li>Si pudiera darte una cosa en la vida, te daría la capacidad de verte como yo te veo.</li>
+        <li>En cada universo, volvería a elegirte.</li>
       </ul>
     </section>
 
+    <section class="carta">
+      <h2>Una carta para ti</h2>
+      <p>Amor mío:<br><br>
+      No sabía cuánto necesitaba tu sonrisa hasta que la perdí. Pero aquí estoy, no para pedirte que vuelvas a lo de antes, sino para ofrecerte algo nuevo: un nuevo comienzo. Un lugar donde tú y yo podamos seguir construyendo, con más verdad, con más amor. <br><br>
+      Gracias por enseñarme lo que es amar de verdad. Esta página es solo una prueba de que aún tengo mucho por dar. Te amo.<br><br>
+      Con todo mi corazón,<br>Tu eterno enamorado.</p>
+    </section>
+
+    <section class="abrelo">
+      <h2>Ábrelo cuando...</h2>
+      <h3>Estés enojada conmigo</h3>
+      <p>Si estás enojada, lo entiendo. No soy perfecto y te he fallado. Pero estoy aquí, dispuesto a aprender de mis errores, a escucharte, a no huir. Porque te respeto y porque te amo.</p>
+
+      <h3>Dudes de mi amor</h3>
+      <p>Cuando dudes de mi amor, solo recuerda lo que estamos construyendo. Puede que no siempre lo demuestre bien, pero nunca ha dejado de estar aquí... latiendo por ti.</p>
+
+      <h3>Te sientas sola</h3>
+      <p>Si te sientes sola, abre esta carta sabiendo que yo te pienso cada día. Aunque estemos distantes, tú estás conmigo. En mi mente, en mi alma y en mi corazón.</p>
+
+      <h3>Me extrañes</h3>
+      <p>¿Me extrañas? Yo también. Cada minuto sin ti me recuerda cuánto significas para mí. Espero poder abrazarte pronto, como si el tiempo no hubiera pasado.</p>
+    </section>
+
+    <section class="musica">
+      <h2>Nuestra canción</h2>
+      <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay"
+        src="https://www.youtube.com/embed/KNZH-emehxA?autoplay=1&loop=1&playlist=KNZH-emehxA"></iframe>
+    </section>
+
+    <section class="formulario">
+      <h2>Cuéntanos tu historia</h2>
+      <form>
+        <label for="nombre">Tu nombre</label>
+        <input type="text" id="nombre" name="nombre" required>
+
+        <label for="historia">Tu historia de amor</label>
+        <textarea id="historia" name="historia" rows="5" required></textarea>
+
+        <label for="correo">Tu correo o WhatsApp</label>
+        <input type="text" id="correo" name="correo" required>
+
+        <button type="submit">Enviar historia</button>
+      </form>
+    </section>
+
+    <section class="final">
+      🌹 Para reconciliarte. 🌻 Para declarar tu amor. 🌸 Para honrar. 🌼 Para decir lo que nunca dijiste.<br>
+      Porque el amor… merece su propio lugar en Internet.
+      <br><a class="boton-contacto" href="https://wa.me/5210000000000" target="_blank">💬 Quiero mi página personalizada</a>
+    </section>
+
     <footer>
-      Hecho con pasión 💜 por David | Tu agencia digital comienza aquí
+      #DetallesConAmor | #RegalaUnaPágina | #AmorDigital <br>
+      Creado por David Alonso – Historias Eternas
     </footer>
   </div>
 </body>
