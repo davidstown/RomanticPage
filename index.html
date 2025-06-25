@@ -8,7 +8,7 @@
     body {
       margin: 0;
       font-family: 'Georgia', serif;
-      background: url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=3000&q=80') no-repeat center center fixed;
+      background: url('https://plus.unsplash.com/premium_photo-1706520337246-f7c0490f71d7?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Y29yYXpvbmVzJTIwZGUlMjBhbW9yfGVufDB8fDB8fHww') no-repeat center center fixed;
       background-size: cover;
       color: #5a2d38;
     }
@@ -21,7 +21,7 @@
       box-shadow: 0 4px 20px rgba(0,0,0,0.1);
     }
     header {
-      background-image: url('https://images.unsplash.com/photo-1520975916090-3105956dac38?auto=format&fit=crop&w=3000&q=80');
+      background-image: url('https://media.istockphoto.com/id/1367357589/es/foto/cielo-rojo-en-forma-de-coraz%C3%B3n-al-atardecer-hermoso-paisaje-con-flores-me-encanta-el-fondo-con.jpg');
       background-size: cover;
       background-position: center;
       height: 90vh;
@@ -42,7 +42,7 @@
       font-size: 1.8em;
       margin-bottom: 10px;
     }
-    .mensaje, .frases, .galeria, .carta, .musica, .abrelo, .formulario, .final {
+    .mensaje, .frases, .galeria, .carta, .musica, .abrelo, .formulario, .final, .poemas, .calendario {
       margin-top: 40px;
       padding: 25px;
       background-color: #fff0f6;
@@ -57,11 +57,11 @@
       width: 100%;
       border-radius: 10px;
     }
-    .frases ul {
+    .frases ul, .poemas ul {
       list-style: none;
       padding-left: 0;
     }
-    .frases ul li::before {
+    .frases ul li::before, .poemas ul li::before {
       content: "💖 ";
     }
     .carta p {
@@ -71,16 +71,23 @@
     .musica iframe {
       border-radius: 10px;
     }
-    .abrelo h3 {
-      margin-top: 15px;
-      color: #cc0066;
+    .abrelo button {
+      margin: 5px;
+      background-color: #cc0066;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
     }
-    .abrelo p {
+    .nota-emocional {
+      display: none;
       font-style: italic;
       background-color: #ffe6f0;
       padding: 15px;
       border-left: 4px solid #cc6699;
       border-radius: 8px;
+      margin-top: 15px;
     }
     .formulario label {
       display: block;
@@ -140,9 +147,9 @@
     </section>
 
     <section class="galeria">
-      <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=800&q=80" alt="Pareja feliz">
-      <img src="https://images.unsplash.com/photo-1495562569060-2eec283d3391?auto=format&fit=crop&w=800&q=80" alt="Recuerdo">
-      <img src="https://images.unsplash.com/photo-1530023367847-a683933f417d?auto=format&fit=crop&w=800&q=80" alt="Flor y amor">
+      <img src="https://images.unsplash.com/photo-1551892844-76cb2c5f4a5c" alt="flores">
+      <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93" alt="regalo">
+      <img src="https://images.unsplash.com/photo-1526045612212-70caf35c14df" alt="cartas de amor">
     </section>
 
     <section class="frases">
@@ -157,31 +164,43 @@
 
     <section class="carta">
       <h2>Una carta para ti</h2>
-      <p>Amor mío:<br><br>
-      No sabía cuánto necesitaba tu sonrisa hasta que la perdí. Pero aquí estoy, no para pedirte que vuelvas a lo de antes, sino para ofrecerte algo nuevo: un nuevo comienzo. Un lugar donde tú y yo podamos seguir construyendo, con más verdad, con más amor. <br><br>
-      Gracias por enseñarme lo que es amar de verdad. Esta página es solo una prueba de que aún tengo mucho por dar. Te amo.<br><br>
-      Con todo mi corazón,<br>Tu eterno enamorado.</p>
+      <p>Amor mío:<br><br>No sabía cuánto necesitaba tu sonrisa hasta que la perdí. Pero aquí estoy, no para pedirte que vuelvas a lo de antes, sino para ofrecerte algo nuevo: un nuevo comienzo. Un lugar donde tú y yo podamos seguir construyendo, con más verdad, con más amor.<br><br>Gracias por enseñarme lo que es amar de verdad. Esta página es solo una prueba de que aún tengo mucho por dar. Te amo.<br><br>Con todo mi corazón,<br>Tu eterno enamorado.</p>
     </section>
 
     <section class="abrelo">
       <h2>Ábrelo cuando...</h2>
-      <h3>Estés enojada conmigo</h3>
-      <p>Si estás enojada, lo entiendo. No soy perfecto y te he fallado. Pero estoy aquí, dispuesto a aprender de mis errores, a escucharte, a no huir. Porque te respeto y porque te amo.</p>
+      <button onclick="mostrarNota('enojo')">Estés enojada conmigo</button>
+      <button onclick="mostrarNota('duda')">Dudes de mi amor</button>
+      <button onclick="mostrarNota('soledad')">Te sientas sola</button>
+      <button onclick="mostrarNota('extrañar')">Me extrañes</button>
 
-      <h3>Dudes de mi amor</h3>
-      <p>Cuando dudes de mi amor, solo recuerda lo que estamos construyendo. Puede que no siempre lo demuestre bien, pero nunca ha dejado de estar aquí... latiendo por ti.</p>
+      <div id="nota-enojo" class="nota-emocional">Si estás enojada, lo entiendo. No soy perfecto y te he fallado. Pero estoy aquí, dispuesto a aprender de mis errores, a escucharte, a no huir. Porque te respeto y porque te amo.</div>
+      <div id="nota-duda" class="nota-emocional">Cuando dudes de mi amor, solo recuerda lo que estamos construyendo. Puede que no siempre lo demuestre bien, pero nunca ha dejado de estar aquí... latiendo por ti.</div>
+      <div id="nota-soledad" class="nota-emocional">Si te sientes sola, abre esta carta sabiendo que yo te pienso cada día. Aunque estemos distantes, tú estás conmigo. En mi mente, en mi alma y en mi corazón.</div>
+      <div id="nota-extrañar" class="nota-emocional">¿Me extrañas? Yo también. Cada minuto sin ti me recuerda cuánto significas para mí. Espero poder abrazarte pronto, como si el tiempo no hubiera pasado.</div>
+    </section>
 
-      <h3>Te sientas sola</h3>
-      <p>Si te sientes sola, abre esta carta sabiendo que yo te pienso cada día. Aunque estemos distantes, tú estás conmigo. En mi mente, en mi alma y en mi corazón.</p>
+    <section class="poemas">
+      <h2>Un poema solo para ti</h2>
+      <ul>
+        <li>En tus ojos hallé el verso que mi alma callaba.</li>
+        <li>Si el amor es un poema, tú eres cada rima perfecta.</li>
+        <li>Contigo el tiempo se desvanece, y solo queda el ahora.</li>
+      </ul>
+    </section>
 
-      <h3>Me extrañes</h3>
-      <p>¿Me extrañas? Yo también. Cada minuto sin ti me recuerda cuánto significas para mí. Espero poder abrazarte pronto, como si el tiempo no hubiera pasado.</p>
+    <section class="calendario">
+      <h2>Nuestras fechas especiales</h2>
+      <ul>
+        <li><strong>14 de febrero:</strong> El día que supe que eras tú.</li>
+        <li><strong>21 de junio:</strong> Nuestro primer beso.</li>
+        <li><strong>10 de agosto:</strong> Esa promesa bajo la luna.</li>
+      </ul>
     </section>
 
     <section class="musica">
       <h2>Nuestra canción</h2>
-      <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay"
-        src="https://www.youtube.com/embed/KNZH-emehxA?autoplay=1&loop=1&playlist=KNZH-emehxA"></iframe>
+      <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://www.youtube.com/embed/KNZH-emehxA?autoplay=1&loop=1&playlist=KNZH-emehxA"></iframe>
     </section>
 
     <section class="formulario">
@@ -189,21 +208,18 @@
       <form>
         <label for="nombre">Tu nombre</label>
         <input type="text" id="nombre" name="nombre" required>
-
         <label for="historia">Tu historia de amor</label>
         <textarea id="historia" name="historia" rows="5" required></textarea>
-
         <label for="correo">Tu correo o WhatsApp</label>
         <input type="text" id="correo" name="correo" required>
-
         <button type="submit">Enviar historia</button>
       </form>
     </section>
 
     <section class="final">
       🌹 Para reconciliarte. 🌻 Para declarar tu amor. 🌸 Para honrar. 🌼 Para decir lo que nunca dijiste.<br>
-      Porque el amor… merece su propio lugar en Internet.
-      <br><a class="boton-contacto" href="https://wa.me/5210000000000" target="_blank">💬 Quiero mi página personalizada</a>
+      Porque el amor… merece su propio lugar en Internet.<br>
+      <a class="boton-contacto" href="https://wa.me/5210000000000" target="_blank">💬 Quiero mi página personalizada</a>
     </section>
 
     <footer>
@@ -211,5 +227,12 @@
       Creado por David Alonso – Historias Eternas
     </footer>
   </div>
+
+  <script>
+    function mostrarNota(id) {
+      document.querySelectorAll('.nota-emocional').forEach(div => div.style.display = 'none');
+      document.getElementById('nota-' + id).style.display = 'block';
+    }
+  </script>
 </body>
 </html>
