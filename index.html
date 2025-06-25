@@ -1,192 +1,417 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tu historia en una página</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Georgia', serif;
-      background: url('https://plus.unsplash.com/premium_photo-1706520337246-f7c0490f71d7?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Y29yYXpvbmVzJTIwZGUlMjBhbW9yfGVufDB8fDB8fHww') no-repeat center center fixed;
-      background-size: cover;
-      color: #4A4A4A;
-    }
-    .container {
-      max-width: 1100px;
-      margin: auto;
-      padding: 20px;
-      background-color: #FFF8F0;
-      border-radius: 20px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-    }
-    header {
-      background-image: url('https://media.istockphoto.com/id/1367357589/es/foto/cielo-rojo-en-forma-de-coraz%C3%B3n-al-atardecer-hermoso-paisaje-con-flores-me-encanta-el-fondo-con.jpg');
-      background-size: cover;
-      background-position: center;
-      height: 90vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      color: white;
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Tu historia en una página - Amor eterno</title>
+<style>
+  /* Colores oscuros románticos */
+  :root {
+    --fondo-principal: #2D1E2F;       /* púrpura oscuro */
+    --fondo-secundario: #3D2C3E;     /* morado más suave */
+    --color-texto: #EADBDD;          /* rosa empolvado claro */
+    --color-titulos: #F4A7B9;        /* rosa empolvado */
+    --color-acento: #E2C79A;         /* dorado suave */
+    --color-enfasis: #8B2E45;        /* burdeos coral profundo */
+    --color-botones: #8B2E45;
+    --color-botones-hover: #b44b6f;
+    --color-fondo-notas: #4A3346;
+    --color-borde-notas: #E2C79A;
+  }
+
+  /* Reset */
+  body, ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: 'Georgia', serif;
+    background: url('https://plus.unsplash.com/premium_photo-1706520337246-f7c0490f71d7?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Y29yYXpvbmVzJTIwZGUlMjBhbW9yfGVufDB8fDB8fHww') no-repeat center center fixed;
+    background-size: cover;
+    color: var(--color-texto);
+    line-height: 1.5;
+  }
+
+  .container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 25px 20px;
+    background-color: var(--fondo-principal);
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+  }
+
+  header {
+    background-image: url('https://media.istockphoto.com/id/1367357589/es/foto/cielo-rojo-en-forma-de-coraz%C3%B3n-al-atardecer-hermoso-paisaje-con-flores-me-encanta-el-fondo-con.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    border-radius: 0 0 20px 20px;
+    box-shadow: inset 0 0 100px rgba(0,0,0,0.7);
+  }
+
+  header h1 {
+    background-color: rgba(0,0,0,0.65);
+    padding: 30px 40px;
+    border-radius: 15px;
+    font-size: 2.8em;
+    font-weight: 700;
+    font-family: 'Georgia', serif;
+    text-shadow: 1px 1px 5px #8B2E45;
+  }
+
+  section {
+    margin-top: 40px;
+    padding: 25px 30px;
+    background-color: var(--fondo-secundario);
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(139,46,69,0.3);
+  }
+
+  section h2 {
+    color: var(--color-titulos);
+    font-size: 2em;
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--color-acento);
+    padding-bottom: 8px;
+  }
+
+  /* Galería */
+  .galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+  }
+
+  .galeria img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+  }
+
+  .galeria img:hover {
+    transform: scale(1.05);
+  }
+
+  /* Textos en listas con corazones */
+  ul {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  ul li::before {
+    content: "💖 ";
+  }
+
+  /* Botones de sección "Ábrelo cuando..." */
+  .abrelo {
+    text-align: center;
+  }
+
+  .abrelo button {
+    margin: 6px 12px;
+    background-color: var(--color-botones);
+    color: white;
+    padding: 12px 22px;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 1em;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(139,46,69,0.6);
+    transition: background-color 0.3s ease;
+  }
+
+  .abrelo button:hover {
+    background-color: var(--color-botones-hover);
+  }
+
+  /* Notas emocionales ocultas */
+  .nota-emocional {
+    display: none;
+    margin-top: 20px;
+    font-style: italic;
+    background-color: var(--color-fondo-notas);
+    color: var(--color-texto);
+    padding: 18px 22px;
+    border-left: 5px solid var(--color-borde-notas);
+    border-radius: 12px;
+    box-shadow: 0 0 8px var(--color-borde-notas);
+  }
+
+  /* Línea del tiempo */
+  .linea-tiempo ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 18px;
+  }
+
+  .linea-tiempo ul li {
+    background-color: #512f4a;
+    padding: 15px 20px;
+    border-radius: 15px;
+    flex: 1 1 140px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.7);
+    font-weight: 600;
+    font-size: 1em;
+    text-align: center;
+    color: var(--color-acento);
+    user-select: none;
+  }
+
+  /* Playlist video */
+  iframe {
+    border: none;
+    width: 100%;
+    height: 166px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+  }
+
+  /* Apartado poema, cartas y demás */
+  .poemas ul, .cualidades ul, .cartas-no-enviadas ul, .futuro ul, .puzzle ul, .universo ul {
+    padding-left: 18px;
+  }
+
+  /* Footer */
+  footer {
+    text-align: center;
+    margin-top: 50px;
+    background-color: #1B0D1B;
+    color: var(--color-texto);
+    padding: 20px 10px;
+    border-radius: 0 0 20px 20px;
+    font-size: 1em;
+    font-family: Georgia, serif;
+  }
+
+  footer a {
+    color: var(--color-titulos);
+    text-decoration: underline;
+  }
+
+  /* Enlaces en listas */
+  ul li a {
+    color: var(--color-acento);
+    text-decoration: none;
+  }
+  ul li a:hover {
+    text-decoration: underline;
+  }
+
+  /* Texto especial en frases */
+  .frases li {
+    font-weight: 500;
+  }
+
+  /* Sección video personalizada */
+  .video video {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+  }
+
+  /* Responsive */
+  @media(max-width: 600px) {
     header h1 {
-      background-color: rgba(0, 0, 0, 0.5);
-      padding: 30px;
-      border-radius: 15px;
-      font-size: 2.5em;
-    }
-    section h2 {
-      color: #8B2E45;
       font-size: 1.8em;
-      margin-bottom: 10px;
-    }
-    .mensaje, .frases, .galeria, .carta, .musica, .abrelo, .final, .poemas, .calendario, .playlist, .video, .cualidades, .cartas-no-enviadas, .futuro, .puzzle, .universo {
-      margin-top: 40px;
-      padding: 25px;
-      background-color: #F6D1C1;
-      border-radius: 15px;
-    }
-    .galeria {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-    }
-    .galeria img {
-      width: 100%;
-      border-radius: 10px;
-    }
-    .frases ul, .poemas ul, .cualidades ul, .cartas-no-enviadas ul, .futuro ul, .puzzle ul, .universo ul {
-      list-style: none;
-      padding-left: 0;
-    }
-    .frases ul li::before, .poemas ul li::before, .cualidades ul li::before, .cartas-no-enviadas ul li::before, .futuro ul li::before, .puzzle ul li::before, .universo ul li::before {
-      content: "💖 ";
-    }
-    .abrelo button {
-      margin: 5px;
-      background-color: #E06C75;
-      color: white;
-      padding: 10px 15px;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-    .nota-emocional {
-      display: none;
-      font-style: italic;
-      background-color: #FFF8F0;
-      padding: 15px;
-      border-left: 4px solid #D4AF7F;
-      border-radius: 8px;
-      margin-top: 15px;
-    }
-    footer {
-      text-align: center;
-      margin-top: 50px;
-      background-color: #8B2E45;
-      color: white;
       padding: 20px;
-      border-radius: 0 0 15px 15px;
     }
-    iframe {
-      border: none;
-      width: 100%;
-      height: 166px;
-      border-radius: 10px;
-      margin-top: 10px;
+    .linea-tiempo ul {
+      flex-direction: column;
+      gap: 12px;
     }
-  </style>
+  }
+</style>
 </head>
 <body>
-  <header>
-    <h1>✨ Porque el amor... merece su propio lugar en Internet ✨</h1>
-  </header>
-  <div class="container">
-    <section class="galeria">
-      <h2>Galería romántica</h2>
-      <img src="https://www.kukyflor.com/blog/wp-content/uploads/2015/06/7_COLECC_800x600_AMOR.jpg">
-      <img src="https://www.mundopsicologos.com/site/article/68030/56732/romantico-relacion_ai1.jpg">
-      <img src="https://cdn.businessinsider.es/sites/navi.axelspringer.es/public/media/image/2024/10/destino-paisaje-pareja-romantica-4252789.jpg?tf=3840x">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMNkPpZTk5wsMNZhssUmZ2XZq7nDV6DBfxpQ&s">
-      <img src="https://www.eluniversal.com.mx/resizer/v2/S5NMZV46YZF3HGG3774FD2XN6E.jpg?auth=39ba5f0143901cfcb01890da9a10f080b1243abd992d04b92de0efc19f4db989&smart=true&width=1100&height=666">
-      <img src="https://offloadmedia.feverup.com/monterreysecreto.com/wp-content/uploads/2022/02/18003031/Lugares-romanticos-cerca-de-Monterrey-1-1024x683.jpg">
-    </section>
 
-    <section class="playlist">
-      <h2>Nuestra música</h2>
-      <iframe src="https://www.youtube.com/embed/KNZH-emehxA?autoplay=1&loop=1&playlist=KNZH-emehxA"></iframe>
-    </section>
+<header>
+  <h1>✨ Porque el amor... merece su propio lugar en Internet ✨</h1>
+</header>
 
-    <section class="abrelo">
-      <h2>Ábrelo cuando...</h2>
-      <button onclick="mostrarNota('enojo')">Estés enojada</button>
+<div class="container">
+
+  <!-- Carta de bienvenida -->
+  <section class="mensaje">
+    <p>✨ ¿Y si tu historia pudiera vivir en una página? ✨</p>
+    <p>A veces, una carta no basta.<br>
+      A veces, el amor, la amistad o la despedida merecen un espacio especial… único, eterno.</p>
+    <p>💌 Creamos páginas web personalizadas que capturan lo que sentiste, lo que viviste, lo que aún sueñas.<br>
+      Con tus fotos, tu carta, tu canción, tus flores favoritas… todo en un rincón hermoso de Internet que puedes enviar con solo un clic, o entregar con un código QR en una tarjeta.</p>
+    <p>🌹 Para reconciliarte.<br>🌻 Para declarar tu amor.<br>🌸 Para honrar a alguien que partió.<br>🌼 Para decir lo que nunca dijiste.</p>
+    <p>Porque el amor… merece su propio lugar en Internet.</p>
+    <p>📲 Escríbenos y deja que tu historia inspire.<br>👇 Cuéntanos tu historia en mensaje privado o comenta con un ❤️ y te contactamos.</p>
+    <p style="text-align:center; font-size:1.3em; color: var(--color-acento); font-weight: 700;">#DetallesConAmor #RegalaUnaPágina #HistoriasEternas #PáginasQueConectan #AmorDigital</p>
+  </section>
+
+  <!-- Galería -->
+  <section class="galeria">
+    <h2>Imagina regalar esto...</h2>
+    <img src="https://www.kukyflor.com/blog/wp-content/uploads/2015/06/7_COLECC_800x600_AMOR.jpg" alt="Flores y amor" />
+    <img src="https://www.mundopsicologos.com/site/article/68030/56732/romantico-relacion_ai1.jpg" alt="Pareja romántica" />
+    <img src="https://cdn.businessinsider.es/sites/navi.axelspringer.es/public/media/image/2024/10/destino-paisaje-pareja-romantica-4252789.jpg?tf=3840x" alt="Paisaje romántico" />
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMNkPpZTk5wsMNZhssUmZ2XZq7nDV6DBfxpQ&s" alt="Chocolates" />
+    <img src="https://www.eluniversal.com.mx/resizer/v2/S5NMZV46YZF3HGG3774FD2XN6E.jpg?auth=39ba5f0143901cfcb01890da9a10f080b1243abd992d04b92de0efc19f4db989&smart=true&width=1100&height=666" alt="Lugar romántico" />
+    <img src="https://offloadmedia.feverup.com/monterreysecreto.com/wp-content/uploads/2022/02/18003031/Lugares-romanticos-cerca-de-Monterrey-1-1024x683.jpg" alt="Lugar romántico 2" />
+  </section>
+
+  <!-- Ábrelo cuando -->
+  <section class="abrelo">
+    <h2>Ábrelo cuando...</h2>
+    <div>
+      <button onclick="mostrarNota('enojo')">Estés enojada conmigo</button>
+      <button onclick="mostrarNota('duda')">Dudes de mi amor</button>
+      <button onclick="mostrarNota('soledad')">Te sientas sola</button>
       <button onclick="mostrarNota('extrañar')">Me extrañes</button>
-      <button onclick="mostrarNota('dudes')">Dudes de mi amor</button>
-      <div id="nota-enojo" class="nota-emocional">Sé que puedes estar molesta, pero recuerda que mi amor sigue intacto. Estoy aquí para escucharte y mejorar.</div>
-      <div id="nota-extrañar" class="nota-emocional">Cada segundo sin ti me recuerda lo afortunado que soy de tenerte. Te extraño más de lo que las palabras pueden decir.</div>
-      <div id="nota-dudes" class="nota-emocional">Si alguna vez dudas de lo que siento por ti, recuerda todos nuestros momentos. No hay un solo día en que no piense en ti con amor.</div>
-    </section>
+    </div>
+    <div id="nota-enojo" class="nota-emocional">
+      <p>Si estás enojada, lo entiendo. No soy perfecto y te he fallado. Pero estoy aquí, dispuesto a aprender de mis errores, a escucharte, a no huir. Porque te respeto y porque te amo.</p>
+    </div>
+    <div id="nota-duda" class="nota-emocional">
+      <p>Cuando dudes de mi amor, solo recuerda lo que estamos construyendo. Puede que no siempre lo demuestre bien, pero nunca ha dejado de estar aquí... latiendo por ti.</p>
+    </div>
+    <div id="nota-soledad" class="nota-emocional">
+      <p>Si te sientes sola, abre esta carta sabiendo que yo te pienso cada día. Aunque estemos distantes, tú estás conmigo. En mi mente, en mi alma y en mi corazón.</p>
+    </div>
+    <div id="nota-extrañar" class="nota-emocional">
+      <p>¿Me extrañas? Yo también. Cada minuto sin ti me recuerda cuánto significas para mí. Espero poder abrazarte pronto, como si el tiempo no hubiera pasado.</p>
+    </div>
+  </section>
 
-    <section class="cualidades">
-      <h2>Lo que veo en ti</h2>
-      <ul>
-        <li>Tu risa cuando intentas contar un chiste sin reírte antes.</li>
-        <li>La forma en que siempre sabes qué decir cuando yo no encuentro palabras.</li>
-        <li>Tu mirada cuando ves algo que te emociona.</li>
-        <li>La paz que siento cuando estoy a tu lado.</li>
-        <li>Tu forma de abrazarme como si el mundo se detuviera.</li>
-      </ul>
-    </section>
+  <!-- Línea del tiempo -->
+  <section class="linea-tiempo">
+    <h2>Nuestra historia</h2>
+    <ul>
+      <li><strong>2008:</strong> Nos conocimos y empezó todo.</li>
+      <li><strong>28/10/2009:</strong> Nació nuestro primer gran amor, Andree.</li>
+      <li><strong>21/07/2011:</strong> Llegó nuestra dulce Samadhi.</li>
+      <li><strong>13/02/2014:</strong> Nos comprometimos ante la sociedad.</li>
+      <li><strong>17/06/2015:</strong> Nació nuestra alegría llamada Eileen.</li>
+      <li><strong>18/08/2023:</strong> Kai llegó a completar nuestra familia.</li>
+    </ul>
+  </section>
 
-    <section class="cartas-no-enviadas">
-      <h2>Cartas que nunca envié</h2>
-      <ul>
-        <li>12/04/2017: Hoy pensé en ti más de lo normal. Solo quería que lo supieras.</li>
-        <li>05/09/2018: Me arrepiento de no haberte dicho lo importante que eras esa tarde.</li>
-        <li>20/02/2020: Imaginé un futuro contigo, y sonreí.</li>
-      </ul>
-    </section>
+  <!-- Lo que veo en ti -->
+  <section class="cualidades">
+    <h2>“Lo que veo en ti”</h2>
+    <p>Una lista sincera de cualidades que amo de ti. No solo lo obvio, sino esas cosas pequeñas que solo tú notas:</p>
+    <ul>
+      <li>Tu risa cuando intentas contar un chiste sin reírte antes.</li>
+      <li>La forma en que siempre sabes qué decir cuando yo no encuentro palabras.</li>
+      <li>Tu mirada que ilumina mis días oscuros.</li>
+      <li>Tu paciencia infinita conmigo.</li>
+      <li>La manera en que haces que todo parezca más fácil.</li>
+    </ul>
+  </section>
 
-    <section class="futuro">
-      <h2>Así te imagino</h2>
-      <ul>
-        <li>Viendo atardeceres juntos desde nuestro balcón.</li>
-        <li>Tomando café en la cocina mientras planeamos un viaje.</li>
-        <li>Riéndonos hasta envejecer, con arrugas de felicidad.</li>
-      </ul>
-    </section>
+  <!-- Cartas que nunca envié -->
+  <section class="cartas-no-enviadas">
+    <h2>✍️ “Cartas que nunca envié”</h2>
+    <p>Mini-cartas con fechas ficticias o reales, como pensamientos que guardé en el tiempo.</p>
+    <ul>
+      <li><em>1 de abril 2023:</em> Hoy pensé en ti más de lo que quería admitir.</li>
+      <li><em>14 de febrero 2024:</em> A veces las palabras sobran, pero te escribo igual.</li>
+      <li><em>23 de junio 2024:</em> Nunca te dije que tus lágrimas me duelen más que las mías.</li>
+    </ul>
+  </section>
 
-    <section class="puzzle">
-      <h2>Las piezas que me faltaban… hasta que llegaste tú</h2>
-      <ul>
-        <li>Tu sonrisa completa mi día.</li>
-        <li>Tu ternura curó partes rotas en mí.</li>
-        <li>Contigo soy la mejor versión de mí mismo.</li>
-      </ul>
-    </section>
+  <!-- Así te imagino -->
+  <section class="futuro">
+    <h2>🎨 “Así te imagino”</h2>
+    <p>Visualizo un futuro contigo así:</p>
+    <ul>
+      <li>Una casa con un jardín lleno de flores.</li>
+      <li>Dos sillones viejitos viendo juntos el atardecer.</li>
+      <li>Compartir cafés y risas cada mañana.</li>
+    </ul>
+  </section>
 
-    <section class="universo">
-      <h2>Universo paralelo</h2>
-      <ul>
-        <li>En otro mundo, nunca discutimos. Solo nos tomamos de la mano cada día.</li>
-        <li>En esa vida, te elegí sin miedo, desde el primer segundo.</li>
-        <li>Ahí, tú y yo somos eternos, sin errores, sin pausas.</li>
-      </ul>
-    </section>
+  <!-- Nuestra banda sonora -->
+  <section class="musica">
+    <h2>🎶 Nuestra banda sonora</h2>
+    <iframe src="https://www.youtube.com/embed/KNZH-emehxA?autoplay=1&loop=1&playlist=KNZH-emehxA" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    <p style="margin-top: 8px;">Una canción que suena en mi corazón cuando pienso en ti.</p>
+  </section>
 
-    <footer>
-      Con amor eterno 💕<br>
-      Una página creada para inmortalizar lo que sentimos.
-    </footer>
-  </div>
+  <!-- Playlist extra (sin nombres, solo video) -->
+  <section class="playlist">
+    <h2>Playlist romántica para ti</h2>
+    <iframe src="https://www.youtube.com/embed/yjdk8bZFWLE" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/mh1Ecilpdqg?list=RDmh1Ecilpdqg" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/hNDtsPMX7p0?list=RDhNDtsPMX7p0" allowfullscreen></iframe>
+  </section>
 
-  <script>
-    function mostrarNota(id) {
-      document.querySelectorAll('.nota-emocional').forEach(div => div.style.display = 'none');
-      document.getElementById('nota-' + id).style.display = 'block';
-    }
-  </script>
+  <!-- Poemas -->
+  <section class="poemas">
+    <h2>Poemas para ti</h2>
+    <ul>
+      <li>En tus ojos encontré la calma que buscaba.</li>
+      <li>Tu sonrisa es el verso más dulce de mi vida.</li>
+      <li>Contigo, cada día es un poema nuevo que escribir.</li>
+    </ul>
+  </section>
+
+  <!-- Piezas que me faltaban -->
+  <section class="puzzle">
+    <h2>🧩 Las piezas que me faltaban… hasta que llegaste tú</h2>
+    <p>Tu amor me completó y me transformó. Eres la pieza que encaja perfectamente en mi vida.</p>
+    <img src="https://cdn-icons-png.flaticon.com/512/1383/1383263.png" alt="Pieza de puzzle corazón" style="width:100px; display:block; margin: 15px auto;" />
+  </section>
+
+  <!-- Universo paralelo -->
+  <section class="universo">
+    <h2>🌌 Universo paralelo</h2>
+    <p>En otro universo, sin errores ni despedidas, tú y yo caminamos siempre juntos, sin miedo, sin dudas, solo amor puro e infinito.</p>
+  </section>
+
+  <!-- Calendario -->
+  <section class="calendario">
+    <h2>Calendario especial</h2>
+    <p>Guarda las fechas importantes para nosotros y revívelas cada año.</p>
+    <ul>
+      <li>28 Octubre - Cumpleaños de Andree</li>
+      <li>21 Julio - Cumpleaños de Samadhi</li>
+      <li>13 Febrero - Compromiso</li>
+      <li>17 Junio - Cumpleaños de Eileen</li>
+      <li>18 Agosto - Cumpleaños de Kai</li>
+    </ul>
+  </section>
+
+  <!-- Video personalizado -->
+  <section class="video">
+    <h2>Video personalizado</h2>
+    <video controls poster="https://cdn.pixabay.com/photo/2017/01/10/19/05/heart-1966453_1280.jpg">
+      <source src="https://cdn.pixabay.com/download/audio/2021/09/21/audio_4c3bfb7a11.mp3?filename=love-music-14236.mp3" type="audio/mp3" />
+      Tu navegador no soporta el video.
+    </video>
+    <p style="text-align:center; margin-top: 10px; color: var(--color-acento); font-style: italic;">
+      Un recuerdo audiovisual hecho con todo mi amor.
+    </p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Regala una página de amor - Creado con 💖 por ti.</p>
+  </footer>
+</div>
+
+<script>
+  function mostrarNota(id) {
+    document.querySelectorAll('.nota-emocional').forEach(div => div.style.display = 'none');
+    const elem = document.getElementById('nota-' + id);
+    if(elem) elem.style.display = 'block';
+  }
+</script>
+
 </body>
 </html>
