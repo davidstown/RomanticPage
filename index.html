@@ -57,16 +57,12 @@
       width: 100%;
       border-radius: 10px;
     }
-    .frases ul, .poemas ul {
+    .frases ul, .poemas ul, .cualidades ul, .cartas-no-enviadas ul, .futuro ul, .puzzle ul, .universo ul {
       list-style: none;
       padding-left: 0;
     }
-    .frases ul li::before, .poemas ul li::before {
+    .frases ul li::before, .poemas ul li::before, .cualidades ul li::before, .cartas-no-enviadas ul li::before, .futuro ul li::before, .puzzle ul li::before, .universo ul li::before {
       content: "💖 ";
-    }
-    .carta p {
-      font-style: italic;
-      font-size: 1.1em;
     }
     .abrelo button {
       margin: 5px;
@@ -86,13 +82,6 @@
       border-radius: 8px;
       margin-top: 15px;
     }
-    .final {
-      background-color: #FFF8F0;
-      text-align: center;
-      font-size: 1.2em;
-      font-weight: bold;
-      color: #8B2E45;
-    }
     footer {
       text-align: center;
       margin-top: 50px;
@@ -100,15 +89,6 @@
       color: white;
       padding: 20px;
       border-radius: 0 0 15px 15px;
-    }
-    .boton-contacto {
-      margin-top: 20px;
-      display: inline-block;
-      padding: 12px 20px;
-      background-color: #D4AF7F;
-      color: white;
-      text-decoration: none;
-      border-radius: 8px;
     }
     iframe {
       border: none;
@@ -133,10 +113,12 @@
       <img src="https://www.eluniversal.com.mx/resizer/v2/S5NMZV46YZF3HGG3774FD2XN6E.jpg?auth=39ba5f0143901cfcb01890da9a10f080b1243abd992d04b92de0efc19f4db989&smart=true&width=1100&height=666">
       <img src="https://offloadmedia.feverup.com/monterreysecreto.com/wp-content/uploads/2022/02/18003031/Lugares-romanticos-cerca-de-Monterrey-1-1024x683.jpg">
     </section>
+
     <section class="playlist">
       <h2>Nuestra música</h2>
       <iframe src="https://www.youtube.com/embed/KNZH-emehxA?autoplay=1&loop=1&playlist=KNZH-emehxA"></iframe>
     </section>
+
     <section class="abrelo">
       <h2>Ábrelo cuando...</h2>
       <button onclick="mostrarNota('enojo')">Estés enojada</button>
@@ -146,7 +128,60 @@
       <div id="nota-extrañar" class="nota-emocional">Cada segundo sin ti me recuerda lo afortunado que soy de tenerte. Te extraño más de lo que las palabras pueden decir.</div>
       <div id="nota-dudes" class="nota-emocional">Si alguna vez dudas de lo que siento por ti, recuerda todos nuestros momentos. No hay un solo día en que no piense en ti con amor.</div>
     </section>
+
+    <section class="cualidades">
+      <h2>Lo que veo en ti</h2>
+      <ul>
+        <li>Tu risa cuando intentas contar un chiste sin reírte antes.</li>
+        <li>La forma en que siempre sabes qué decir cuando yo no encuentro palabras.</li>
+        <li>Tu mirada cuando ves algo que te emociona.</li>
+        <li>La paz que siento cuando estoy a tu lado.</li>
+        <li>Tu forma de abrazarme como si el mundo se detuviera.</li>
+      </ul>
+    </section>
+
+    <section class="cartas-no-enviadas">
+      <h2>Cartas que nunca envié</h2>
+      <ul>
+        <li>12/04/2017: Hoy pensé en ti más de lo normal. Solo quería que lo supieras.</li>
+        <li>05/09/2018: Me arrepiento de no haberte dicho lo importante que eras esa tarde.</li>
+        <li>20/02/2020: Imaginé un futuro contigo, y sonreí.</li>
+      </ul>
+    </section>
+
+    <section class="futuro">
+      <h2>Así te imagino</h2>
+      <ul>
+        <li>Viendo atardeceres juntos desde nuestro balcón.</li>
+        <li>Tomando café en la cocina mientras planeamos un viaje.</li>
+        <li>Riéndonos hasta envejecer, con arrugas de felicidad.</li>
+      </ul>
+    </section>
+
+    <section class="puzzle">
+      <h2>Las piezas que me faltaban… hasta que llegaste tú</h2>
+      <ul>
+        <li>Tu sonrisa completa mi día.</li>
+        <li>Tu ternura curó partes rotas en mí.</li>
+        <li>Contigo soy la mejor versión de mí mismo.</li>
+      </ul>
+    </section>
+
+    <section class="universo">
+      <h2>Universo paralelo</h2>
+      <ul>
+        <li>En otro mundo, nunca discutimos. Solo nos tomamos de la mano cada día.</li>
+        <li>En esa vida, te elegí sin miedo, desde el primer segundo.</li>
+        <li>Ahí, tú y yo somos eternos, sin errores, sin pausas.</li>
+      </ul>
+    </section>
+
+    <footer>
+      Con amor eterno 💕<br>
+      Una página creada para inmortalizar lo que sentimos.
+    </footer>
   </div>
+
   <script>
     function mostrarNota(id) {
       document.querySelectorAll('.nota-emocional').forEach(div => div.style.display = 'none');
