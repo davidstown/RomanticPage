@@ -42,7 +42,7 @@
       font-size: 1.8em;
       margin-bottom: 10px;
     }
-    .mensaje, .frases, .galeria, .carta, .musica, .abrelo, .formulario, .final, .poemas, .calendario {
+    .mensaje, .frases, .galeria, .carta, .musica, .abrelo, .final, .poemas, .calendario, .playlist, .video {
       margin-top: 40px;
       padding: 25px;
       background-color: #fff0f6;
@@ -68,9 +68,6 @@
       font-style: italic;
       font-size: 1.1em;
     }
-    .musica iframe {
-      border-radius: 10px;
-    }
     .abrelo button {
       margin: 5px;
       background-color: #cc0066;
@@ -88,27 +85,6 @@
       border-left: 4px solid #cc6699;
       border-radius: 8px;
       margin-top: 15px;
-    }
-    .formulario label {
-      display: block;
-      margin-top: 10px;
-      font-weight: bold;
-    }
-    .formulario input, .formulario textarea {
-      width: 100%;
-      padding: 10px;
-      margin-top: 5px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-    }
-    .formulario button {
-      margin-top: 15px;
-      background-color: #cc0066;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
     }
     .final {
       background-color: #ffe0eb;
@@ -147,9 +123,12 @@
     </section>
 
     <section class="galeria">
-      <img src="https://images.unsplash.com/photo-1551892844-76cb2c5f4a5c" alt="flores">
-      <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93" alt="regalo">
-      <img src="https://images.unsplash.com/photo-1526045612212-70caf35c14df" alt="cartas de amor">
+      <img src="https://www.kukyflor.com/blog/wp-content/uploads/2015/06/7_COLECC_800x600_AMOR.jpg" alt="flores">
+      <img src="https://www.mundopsicologos.com/site/article/68030/56732/romantico-relacion_ai1.jpg" alt="pareja">
+      <img src="https://cdn.businessinsider.es/sites/navi.axelspringer.es/public/media/image/2024/10/destino-paisaje-pareja-romantica-4252789.jpg?tf=3840x" alt="paisaje">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMNkPpZTk5wsMNZhssUmZ2XZq7nDV6DBfxpQ&s" alt="cita">
+      <img src="https://www.eluniversal.com.mx/resizer/v2/S5NMZV46YZF3HGG3774FD2XN6E.jpg?auth=39ba5f0143901cfcb01890da9a10f080b1243abd992d04b92de0efc19f4db989&smart=true&width=1100&height=666" alt="abrazos">
+      <img src="https://offloadmedia.feverup.com/monterreysecreto.com/wp-content/uploads/2022/02/18003031/Lugares-romanticos-cerca-de-Monterrey-1-1024x683.jpg" alt="lugares romanticos">
     </section>
 
     <section class="frases">
@@ -198,22 +177,19 @@
       </ul>
     </section>
 
-    <section class="musica">
-      <h2>Nuestra canción</h2>
-      <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://www.youtube.com/embed/KNZH-emehxA?autoplay=1&loop=1&playlist=KNZH-emehxA"></iframe>
+    <section class="playlist">
+      <h2>Playlist para nosotros</h2>
+      <ul>
+        <li><a href="https://www.youtube.com/watch?v=yjdk8bZFWLE" target="_blank">A ti te quería contar - Reik</a></li>
+        <li><a href="https://www.youtube.com/watch?v=mh1Ecilpdqg" target="_blank">Perfect - Ed Sheeran</a></li>
+        <li><a href="https://www.youtube.com/watch?v=hNDtsPMX7p0" target="_blank">Amor Eterno - Rocío Dúrcal</a></li>
+      </ul>
     </section>
 
-    <section class="formulario">
-      <h2>Cuéntanos tu historia</h2>
-      <form>
-        <label for="nombre">Tu nombre</label>
-        <input type="text" id="nombre" name="nombre" required>
-        <label for="historia">Tu historia de amor</label>
-        <textarea id="historia" name="historia" rows="5" required></textarea>
-        <label for="correo">Tu correo o WhatsApp</label>
-        <input type="text" id="correo" name="correo" required>
-        <button type="submit">Enviar historia</button>
-      </form>
+    <section class="video">
+      <h2>Un video solo para ti</h2>
+      <p>Este espacio es perfecto para incluir un video personalizado, ya sea un mensaje grabado, un recuerdo o una declaración especial. Puedes subir tu video a YouTube y pegar el link aquí:</p>
+      <iframe width="100%" height="315" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
     </section>
 
     <section class="final">
@@ -224,7 +200,7 @@
 
     <footer>
       #DetallesConAmor | #RegalaUnaPágina | #AmorDigital <br>
-      Creado por David Alonso – Historias Eternas
+      Creado por Davids – Historias Eternas
     </footer>
   </div>
 
